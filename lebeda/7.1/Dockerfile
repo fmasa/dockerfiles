@@ -21,7 +21,7 @@ RUN apt-get update \
 	&& a2enmod rewrite \
 	&& usermod -u 1000 www-data \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-	&& chmod u+x run.sh
+	&& chmod u+x /run.sh
 
 CMD ["/run.sh"]
 
