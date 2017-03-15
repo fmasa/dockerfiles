@@ -4,7 +4,7 @@ MAINTAINER Frantisek Masa <frantisekmasa1@gmail.com>
 
 ADD run.sh /run.sh
 
-RUN apt-get update
+RUN apt-get update \
 	&& apt-get install -y \ 
 	libxml2-dev \
 	git \
@@ -18,9 +18,9 @@ RUN apt-get update
 	&& docker-php-ext-install soap \
 	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-install zip \
-	&& a2enmod rewrite
-	&& usermod -u 1000 www-data
-	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+	&& a2enmod rewrite \
+	&& usermod -u 1000 www-data \
+	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
 	&& chmod u+x run.sh
 
 CMD ["/run.sh"]
