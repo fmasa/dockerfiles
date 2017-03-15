@@ -23,6 +23,8 @@ RUN apt-get update \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
 	&& chmod u+x /run.sh
 
+ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+
 CMD ["/run.sh"]
 
 WORKDIR /var/www/html
