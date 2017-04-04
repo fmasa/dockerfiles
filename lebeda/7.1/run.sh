@@ -1,9 +1,14 @@
 #!/bin/bash
 
-TEMP_DIR=/var/www/html/nette-temp
+IFS=';' read -r -a writable_dirs_array <<< "${WRITABLE_DIRS:-/var/www/html/nette-temp}"
 
-chown www-data:www-data $TEMP_DIR -R
-chmod 777 $TEMP_DIR
+for element in "${writable_dirs_array[@]}"
+do
+    chown www-data:www-data $element -R
+    chmod 777 $element
+    echo "$element"
+done
+
 
 # Enable bash history
 touch /var/www/.bash_history
