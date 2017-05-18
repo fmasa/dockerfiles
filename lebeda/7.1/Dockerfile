@@ -14,7 +14,7 @@ RUN apt-get update \
 	libmcrypt-dev \
 	libpng12-dev \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-	&& docker-php-ext-install -j$(nproc) gd soap mysqli pdo pdo_mysql zip \
+	&& docker-php-ext-install -j$(nproc) gd soap mysqli pdo pdo_mysql zip bcmath \
 	&& a2enmod rewrite \
 	&& usermod -u 1000 www-data \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
