@@ -21,6 +21,7 @@ RUN apt-get update \
 	&& chmod u+x /run.sh
 
 ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
+RUN ln -s /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled
 
 CMD ["/run.sh"]
 
