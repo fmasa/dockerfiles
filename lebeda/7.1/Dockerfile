@@ -18,6 +18,8 @@ RUN apt-get update \
 	&& a2enmod rewrite \
 	&& usermod -u 1000 www-data \
 	&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
+	&& curl -o /usr/local/bin/phing https://www.phing.info/get/phing-latest.phar \
+	&& chmod +x /usr/local/bin/phing \
 	&& chmod u+x /run.sh
 
 ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
