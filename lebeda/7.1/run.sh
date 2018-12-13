@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IFS=';' read -r -a writable_dirs_array <<< "${WRITABLE_DIRS:-/var/www/html/nette-temp}"
+IFS=';' read -r -a writable_dirs_array <<< "${WRITABLE_DIRS:-/var/www/html/temp}"
 
 for element in "${writable_dirs_array[@]}"
 do
