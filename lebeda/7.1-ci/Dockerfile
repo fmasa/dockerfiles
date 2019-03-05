@@ -21,7 +21,8 @@ RUN curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - 
     	echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list && \
     	apt-get update
 
-RUN apt-get install -y \
+RUN mkdir -p /usr/share/man/man1 && \
+    apt-get install -y \
     xvfb \
 	google-chrome-stable \
 	fontconfig \
@@ -31,6 +32,7 @@ RUN apt-get install -y \
 	fonts-kacst \
 	fonts-noto \
 	ttf-freefont \
+	libcups2 \
 	--no-install-recommends && \
 	apt-get -t jessie-backports install -y openjdk-8-jre-headless ca-certificates-java && \
 	rm -rf /var/lib/apt/lists/*
