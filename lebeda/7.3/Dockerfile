@@ -1,4 +1,4 @@
-FROM php:7.3.3-apache
+FROM php:7.3.13-apache
 
 LABEL maintainer="frantisekmasa1@gmail.com"
 
