@@ -6,6 +6,7 @@ LABEL maintainer="frantisekmasa1@gmail.com"
 RUN apt-get update && apt-get install -y \
         gnupg2 \
         apt-transport-https \
+        gettext-base \
 	&& rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome
