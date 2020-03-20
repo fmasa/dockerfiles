@@ -31,7 +31,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
         nodejs \
         openjdk-11-jre-headless \
         ca-certificates-java \
-    && npm install selenium-standalone@latest -g \
+    && npm install selenium-standalone@latest yarn -g \
     && selenium-standalone install \
 	&& rm -rf /var/lib/apt/lists/*
 
