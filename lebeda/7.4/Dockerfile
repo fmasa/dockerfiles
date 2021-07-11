@@ -42,6 +42,8 @@ ADD 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 RUN ln -s /etc/apache2/mods-available/headers.load /etc/apache2/mods-enabled \
     && a2enmod rewrite
 
+ADD php.ini /usr/local/etc/php/conf.d/php.ini
+
 # Add startup script
 ADD run.sh /run.sh
 RUN chmod u+x /run.sh
