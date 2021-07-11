@@ -21,7 +21,7 @@ RUN apt-get update \
 	    libxml2-dev \
 	    libzip-dev \
 	    locales \
-	&& docker-php-ext-configure gd \
+	&& docker-php-ext-configure gd --with-freetype --with-jpeg \
 	&& docker-php-ext-install -j$(nproc) gd soap mysqli pdo pdo_mysql zip bcmath \
 	&& pecl install xdebug \
 	&& rm -rf /var/lib/apt/lists/*
