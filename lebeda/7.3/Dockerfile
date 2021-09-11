@@ -22,7 +22,7 @@ RUN apt-get update \
 	    libzip-dev \
 	    locales \
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-	&& docker-php-ext-install -j$(nproc) gd soap mysqli pdo pdo_mysql zip bcmath \
+	&& docker-php-ext-install -j$(nproc) gd soap mysqli pdo pdo_mysql zip bcmath intl \
 	&& pecl install xdebug \
 	&& rm -rf /var/lib/apt/lists/*
 
