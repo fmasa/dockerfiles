@@ -37,7 +37,7 @@ RUN mkdir -p /usr/share/man/man1 && \
 	apt-get -t jessie-backports install -y openjdk-8-jre-headless ca-certificates-java && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - && \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - && \
     apt-get install -y nodejs && \
     npm install selenium-standalone@latest -g && \
     selenium-standalone install
