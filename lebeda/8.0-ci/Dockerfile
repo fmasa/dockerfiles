@@ -25,7 +25,7 @@ RUN curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - 
 	&& rm -rf /var/lib/apt/lists/*
 
 # Install Selenium
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash - \
     && mkdir -p /usr/share/man/man1 \
     && apt-get install --no-install-recommends -y \
         nodejs \
