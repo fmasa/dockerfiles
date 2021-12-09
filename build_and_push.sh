@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+docker build -t fmasa/lebeda:8.1 lebeda/8.1 --no-cache
+docker build -t fmasa/lebeda:8.1-ci lebeda/8.1-ci --no-cache
+
 docker build -t fmasa/lebeda:8.0 lebeda/8.0 --no-cache
 docker build -t fmasa/lebeda:8.0-ci lebeda/8.0-ci --no-cache
 
